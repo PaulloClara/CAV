@@ -1,6 +1,17 @@
+from app.ui import UI
+
+
 class CAV(object):
   def __init__(self):
-    pass
+    self.on = True
+    self.ui = UI(stop=self.stop)
 
   def run(self):
-    print('Olá humano')
+    while self.on:
+      self.ui.show(self.ui.get('Qual seu nome?'))
+      self.ui.show(self.ui.get(f'Quantos anos vc tem?', type_input='int'))
+
+  def stop(self):
+    self.on = False
+    self.ui.show('Bye Bye')
+    exit()
