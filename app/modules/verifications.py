@@ -2,17 +2,19 @@ class Verifications(object):
   def __init__(self):
     pass
 
-  def checkCorrectFunction(self, user_input, key_expressions, functions):
+  def checkCorrectFunction(self, user_input, keywords, functions):
     for function in functions:
-      function['possibility'] = 0
-    for key_expression in key_expressions:
-      if key_expression['value'] in user_input:
-        index = key_expression['id_function'] - 1
-        functions[index]['possibility'] += 1
+      function['keywords_found'] = []
+    for keyword in keywords:
+      if keyword['value'] in user_input:
+        index = keyword['id_function'] - 1
+        functions[index]['keywords_found'].append(keyword)
     probable_function = functions[0]
     for function in functions:
-      if function['possibility'] > probable_function['possibility']:
+      function_score = len(function['keywords_found'])
+      probable_function_score = len(probable_function['keywords_found'])
+      if function_score > probable_function_score:
         probable_function = function
-    if not probable_function['possibility']:
+    if not probable_function['keywords_found']:
       return None
-    return probable_function['value']
+    return probable_function
