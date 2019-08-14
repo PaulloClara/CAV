@@ -1,0 +1,12 @@
+{
+  "name": "cav",
+  "version": "1.0.0",
+  "description": "Clara Assistente Virtual é um projeto relativamente simples que fiz para brincar com minha namorada.",
+  "main": "run.py",
+  "repository": "https://github.com/PaulloClara/CAV.git",
+  "author": "PaulloClara <paulloclara@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "python -B run.py"
+  }
+}
