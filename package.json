@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Clara Assistente Virtual é um projeto relativamente simples que fiz para brincar com minha namorada.",
   "main": "run.py",
-  "repository": "https://github.com/PaulloClara/CAV.git",
-  "author": "PaulloClara <paulloclara@gmail.com>",
+  "repository": "https://github.com/PaulloClara/cav.git",
+  "author": "paulloclara",
   "license": "MIT",
   "scripts": {
-    "start": "python -B run.py"
+    "start": "./.env/bin/python -B run.py"
   }
 }

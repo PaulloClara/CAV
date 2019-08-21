@@ -21,7 +21,7 @@ class CAV(object):
       if probable_function['value'] == 'calculate':
         self.calculate(probable_function['keywords_found'])
       elif probable_function['value'] == 'open_program':
-        self.openProgram()
+        self.openProgram(probable_function['keywords_found'])
       else:
         self.ui.show('Desculpe, ocorreu um erro...', type_msg='error')
 
@@ -31,8 +31,20 @@ class CAV(object):
     result = self.modules.calculator.run(expression)
     self.ui.show(f'O é resultado é {result}!')
 
-  def openProgram(self):
-    pass
+  def openProgram(self, keywords_found):
+    user_input = self.clearUserEntries(keywords_found)
+    columns = ['id', 'nickname', 'value']
+    sql_code = self.db.select('programs', columns=columns)
+    all_programs = self.db.run(sql_code, columns=columns)
+    program = self.modules.open_program.findProgram(user_input, all_programs)
+    if not program:
+      self.ui.show('O programa não foi encontrado no banco de dados', type_msg='error')
+      return
+    user_input = user_input.replace(program, '')
+    sql_code = self.db.select('parameters', columns=columns)
+    all_parameters = self.db.run(sql_code, columns=columns)
+    parameters = self.modules.open_program.findParameters(user_input, all_parameters)
+    self.modules.open_program.run(program, parameters)
 
   def findProbableFunction(self):
     # Buscando keywords e functions no BD
