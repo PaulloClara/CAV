@@ -7,7 +7,8 @@
   "author": "paulloclara",
   "license": "MIT",
   "scripts": {
-    "cli": "./.env/bin/python -B run.py cli",
-    "gui": "./.env/bin/python -B run.py gui"
+    "start": "python3 -B run.py",
+    "dev": "./.env/bin/python -B run.py",
+    "pip": "./.env/bin/python ./.env/bin/pip install"
   }
 }
