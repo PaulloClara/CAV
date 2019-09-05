@@ -12,5 +12,6 @@ class Calculator(object):
   def removeUnwantedCharacters(self, expression):
     treated_expression = ''
     for character in expression:
-      treated_expression += character
+      if character in self.mathematical_characters:
+        treated_expression += character
     return treated_expression
