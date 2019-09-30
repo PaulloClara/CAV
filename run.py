@@ -9,5 +9,5 @@ if __name__ == '__main__':
         voice = False
 
     cav = CAV(voice=voice)
-    while cav.on:
+    while cav._on:
         cav.run()

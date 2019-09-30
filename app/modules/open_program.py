@@ -6,7 +6,7 @@ class OpenProgram(object):
         pass
 
     def run(self, program, parameters):
-        output_file = open('./temp/outputs', 'w+')
+        output_file = open('./temp/outputs', mode='w+')
         command_line = ''
         if not parameters:
             command_line = f'{program} &'
@@ -20,18 +20,18 @@ class OpenProgram(object):
             universal_newlines=True
         )
 
-    def findProgram(self, user_input, all_programs):
+    def find_program(self, user_input, programs_bd):
         possible_program = ''
-        for program in all_programs:
+        for program in programs_bd:
             nickname = program['nickname']
             if nickname in user_input and nickname > possible_program:
                 possible_program = program['value']
 
         return possible_program
 
-    def findParameters(self, user_input, all_parameters):
+    def find_params(self, user_input, parameters_bd):
         parameters = []
-        for parameter in all_parameters:
+        for parameter in parameters_bd:
             if parameter['nickname'] in user_input:
                 parameters.append(parameter['value'])
 
