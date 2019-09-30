@@ -4,7 +4,7 @@ from app.modules.open_program import OpenProgram
 
 
 class Modules(object):
-  def __init__(self):
-    self.verifications = Verifications()
-    self.calculator = Calculator()
-    self.open_program = OpenProgram()
+    def __init__(self):
+        self.verifications = Verifications()
+        self.calculator = Calculator()
+        self.open_program = OpenProgram()

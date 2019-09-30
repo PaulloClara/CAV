@@ -3,11 +3,11 @@ from app import CAV
 
 
 if __name__ == '__main__':
-  voice = True
+    voice = True
 
-  if '--voiceoff' in argv:
-    voice = False
+    if '--voiceoff' in argv:
+        voice = False
 
-  cav = CAV(voice=voice)
-  while cav.on:
-    cav.run()
+    cav = CAV(voice=voice)
+    while cav.on:
+        cav.run()
