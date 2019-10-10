@@ -1,21 +1,24 @@
 # CAV
-A Clara Assistente Virtual é um projeto relativamente simples que fiz para brincar com
-a minha namorada
 
-## O projeto usa:
-```
-Python3
-gtts
-SQLite3
-cvlc
-```
+## Clara Assistant Virtual is a relatively simple project I did to play with my girlfriend
 
-### Para instalar todas as dependências (com um env ativado de preferência), execute esse comando:
-```
-pip3 install -r dep.txt
-```
+### Technologies
 
-### Para executar a CAV:
-```
-python3 -B run.py
-```
+- Python3
+- gtts
+- SQLite3
+- cvlc
+
+### Config Dev
+
+`$ python3 -m venv .env`\
+`$ pip3 install -r requirements.txt`
+
+### Activate / Deactivate ENV
+
+`$ source ./.env/bin/activate`\
+`$ deactivate`
+
+### Run
+
+`$ python3 -B run.py`
